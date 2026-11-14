@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertex Revenue | Pre-qualified sales calls for high-ticket B2B service providers</title>
+<meta name="description" content="Vertex Revenue books pre-qualified sales calls for agencies, consultants and select coaches selling ₹1L+ engagements. Month-to-month retainer. Measured on calendar quality, not volume.">
+<meta property="og:title" content="Vertex Revenue">
+<meta property="og:description" content="Fewer calls. Every one worth taking. Pre-qualified sales calls for high-ticket B2B service providers.">
+<meta name="theme-color" content="#0F1724">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1724'/%3E%3Cpath d='M6 24 16 8l10 16' fill='none' stroke='%23C8A15A' stroke-width='2.6' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='8' r='2.6' fill='%23E9ECEF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1724;
+    --ink-2:#172133;
+    --ink-3:#22304A;
+    --porcelain:#E9ECEF;
+    --paper:#F4F5F6;
+    --mist:#93A0B4;
+    --brass:#C8A15A;
+    --brass-soft:rgba(200,161,90,.14);
+    --signal:#C2574A;
+    --line:rgba(233,236,239,.12);
+    --line-dark:rgba(15,23,36,.14);
+    --serif:"Newsreader", Georgia, serif;
+    --sans:"Hanken Grotesk", system-ui, sans-serif;
+    --s1:clamp(2.6rem, 6vw, 4.7rem);
+    --s2:clamp(2rem, 4vw, 3.15rem);
+    --s3:clamp(1.45rem, 2.4vw, 1.9rem);
+    --wrap:min(1180px, 92vw);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--porcelain);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+  .wrap{width:var(--wrap);margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.08}
+  p{max-width:62ch}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(15,23,36,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-size:1.3rem}
+  .brand svg{width:26px;height:26px}
+  .nav ul{display:flex;gap:2rem;list-style:none;font-size:.95rem;color:var(--mist)}
+  .nav ul a{text-decoration:none}
+  .nav ul a:hover{color:var(--porcelain)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:999px;font-weight:600;font-size:.98rem;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+  .btn-brass{background:var(--brass);color:var(--ink)}
+  .btn-brass:hover{background:#d8b46f}
+  .btn-ghost{border:1px solid var(--line);color:var(--porcelain)}
+  .btn-ghost:hover{border-color:var(--mist)}
+  .nav .btn{padding:.55rem 1.1rem;font-size:.9rem}
+
+  /* hero */
+  .hero{padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(4rem,8vw,6rem)}
+  .hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{font-size:var(--s1);font-weight:300}
+  .hero h1 em{font-style:italic;color:var(--brass)}
+  .lede{margin-top:1.6rem;font-size:1.18rem;color:#C3CBD7}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
+  .terms{margin-top:2.4rem;display:flex;gap:2rem;flex-wrap:wrap;color:var(--mist);font-size:.94rem}
+  .terms span{display:flex;align-items:center;gap:.5rem}
+  .terms svg{width:16px;height:16px;flex:none}
+
+  /* screening board */
+  .board{background:var(--ink-2);border:1px solid var(--line);border-radius:22px;padding:1.4rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+  .board-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+  .board-head h2{font-size:1.2rem}
+  .board-head small{color:var(--mist);font-size:.82rem}
+  .lane{height:150px;position:relative;border-radius:14px;background:var(--ink);border:1px dashed var(--line);overflow:hidden}
+  .lead{position:absolute;inset:14px;display:flex;flex-direction:column;gap:.75rem;transition:opacity .45s, transform .6s cubic-bezier(.5,0,.2,1)}
+  .lead .who{font-size:1rem;font-weight:500}
+  .lead .who span{display:block;color:var(--mist);font-size:.86rem;font-weight:400}
+  .checks{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chk{font-size:.78rem;padding:.28rem .6rem;border-radius:999px;border:1px solid var(--line);color:var(--mist);display:inline-flex;align-items:center;gap:.35rem;transition:all .25s}
+  .chk i{width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+  .chk.ok{color:var(--porcelain);border-color:rgba(200,161,90,.5)}
+  .chk.ok i{background:var(--brass)}
+  .chk.no{color:#E9A79E;border-color:rgba(194,87,74,.6)}
+  .chk.no i{background:var(--signal)}
+  .lead.rejected .who{text-decoration:line-through;text-decoration-color:var(--signal);color:var(--mist)}
+  .lead.out{opacity:0;transform:translateX(-30px)}
+  .lead.up{opacity:0;transform:translateY(40px) scale(.9)}
+
+  .week{margin-top:1rem;display:grid;grid-template-columns:44px repeat(5,1fr);gap:4px;font-size:.78rem}
+  .week .d{color:var(--mist);text-align:center;padding-bottom:.25rem}
+  .week .t{color:var(--mist);padding-top:.35rem}
+  .slot{height:40px;border-radius:8px;background:var(--ink);border:1px solid rgba(233,236,239,.06);position:relative;overflow:hidden}
+  .slot.busy{background:repeating-linear-gradient(135deg,rgba(233,236,239,.04) 0 6px,transparent 6px 12px)}
+  .slot .bk{position:absolute;inset:0;background:var(--brass);color:var(--ink);font-weight:600;padding:.25rem .4rem;line-height:1.2;font-size:.72rem;transform:scale(.6);opacity:0;transition:all .5s cubic-bezier(.3,1.4,.5,1)}
+  .slot .bk.on{transform:none;opacity:1}
+  .tally{display:flex;justify-content:space-between;margin-top:1rem;color:var(--mist);font-size:.86rem}
+  .tally b{color:var(--porcelain);font-weight:600}
+
+  /* sections */
+  section{padding:clamp(4.5rem,9vw,7.5rem) 0}
+  .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+  .h2{font-size:var(--s2)}
+  .muted{color:var(--mist)}
+
+  .pain{border-top:1px solid var(--line)}
+  .pain ul{list-style:none}
+  .pain li{display:grid;grid-template-columns:1fr;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+  .pain li h3{font-size:var(--s3)}
+  .pain li p{color:var(--mist);margin-top:.35rem}
+
+  /* light section */
+  .light{background:var(--paper);color:var(--ink)}
+  .light .muted{color:#56627A}
+  .booked{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3rem;border-top:1px solid var(--line-dark)}
+  .booked div{padding:1.6rem 1.6rem 0 0}
+  .booked div + div{padding-left:1.6rem;border-left:1px solid var(--line-dark)}
+  .booked .n{font-family:var(--serif);font-size:3.2rem;line-height:1;color:var(--brass);font-weight:300}
+  .booked h3{font-size:1.5rem;margin:.8rem 0 .3rem}
+  .booked p{color:#56627A}
+  .note{margin-top:2.4rem;font-family:var(--serif);font-style:italic;font-size:1.35rem;max-width:44ch}
+
+  .criteria{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .criteria div{background:var(--ink);padding:1.6rem}
+  .criteria h3{font-size:1.4rem;margin-bottom:.35rem}
+  .criteria p{color:var(--mist);font-size:.98rem}
+
+  .script{margin-top:4rem;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem)}
+  .q{border-left:2px solid var(--ink-3);padding:0 0 2rem 1.6rem;position:relative}
+  .q:last-child{padding-bottom:0}
+  .q::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--brass)}
+  .q blockquote{font-family:var(--serif);font-size:1.45rem;line-height:1.3}
+  .q .why{margin-top:.6rem;color:var(--mist);font-size:.95rem}
+  .q .why b{color:var(--porcelain);font-weight:500}
+
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);margin-top:3rem}
+  .fit h3{font-size:1.6rem;padding-bottom:1rem;border-bottom:1px solid var(--line-dark)}
+  .fit ul{list-style:none}
+  .fit li{padding:1rem 0 1rem 2rem;border-bottom:1px solid var(--line-dark);position:relative}
+  .fit li::before{content:"";position:absolute;left:0;top:1.45rem;width:14px;height:2px;background:var(--brass)}
+  .fit .no li::before{background:#B9BFC9}
+  .fit .no li{color:#56627A}
+
+  .promise{text-align:left}
+  .promise .big{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.1;max-width:20ch}
+  .promise .big span{color:var(--mist)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+  .pillars h3{font-size:1.35rem;margin-bottom:.4rem}
+  .pillars p{color:var(--mist);font-size:.98rem}
+
+  .cta{background:var(--ink-2);border-top:1px solid var(--line)}
+  .cta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:end}
+  .cta h2{font-size:var(--s1);font-weight:300}
+  .cta p{color:#C3CBD7;margin-top:1.2rem}
+  .cta .actions{justify-content:flex-end}
+
+  footer{padding:2.2rem 0;border-top:1px solid var(--line);color:var(--mist);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--porcelain)}
+
+  @media (max-width:920px){
+    .nav ul{display:none}
+    .hero .wrap,.split,.script,.cta .wrap{grid-template-columns:1fr}
+    .cta .actions{justify-content:flex-start}
+    .pillars{grid-template-columns:1fr}
+  }
+  @media (max-width:680px){
+    .booked{grid-template-columns:1fr}
+    .booked div + div{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}
+    .booked div{padding-bottom:1.4rem}
+    .criteria,.fit{grid-template-columns:1fr}
+    .week{grid-template-columns:36px repeat(5,1fr)}
+    .slot .bk{font-size:.62rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vertex Revenue home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25 16 7l11 18" fill="none" stroke="#C8A15A" stroke-width="2.4" stroke-linejoin="round"/><circle cx="16" cy="7" r="2.6" fill="#E9ECEF"/></svg>
+      Vertex Revenue
+    </a>
+    <ul>
+      <li><a href="#booked">What booked means</a></li>
+      <li><a href="#qualify">How we qualify</a></li>
+      <li><a href="#fit">Who it's for</a></li>
+    </ul>
+    <a class="btn btn-brass" data-book href="#book">Book an intro call</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Fewer sales calls. <em>Every one worth taking.</em></h1>
+        <p class="lede">Vertex Revenue books pre-qualified sales calls for high-ticket B2B service providers. We screen every prospect for a real problem, budget and authority before anything reaches your calendar.</p>
+        <div class="actions">
+          <a class="btn btn-brass" data-book href="#book">Book an intro call</a>
+          <a class="btn btn-ghost" href="#qualify">See how we qualify</a>
+        </div>
+        <div class="terms">
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#C8A15A" stroke-width="1.8"/></svg>Month-to-month retainer</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="#C8A15A" stroke-width="1.8"/></svg>A few clients at a time</span>
+        </div>
+      </div>
+
+      <div class="board" aria-label="Illustration: prospects screened against four checks, with only qualified ones booked on the calendar">
+        <div class="board-head">
+          <h2>A week of screening</h2>
+          <small>Illustration</small>
+        </div>
+        <div class="lane" id="lane" aria-hidden="true"></div>
+        <div class="week" id="week" aria-hidden="true"></div>
+        <div class="tally" aria-hidden="true">
+          <span>Screened <b id="screened">0</b></span>
+          <span>Turned away <b id="rejected">0</b></span>
+          <span>On your calendar <b id="bookedCount">0</b></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pain">
+    <div class="wrap split">
+      <h2 class="h2">Your calendar is full of people who were never going to buy.</h2>
+      <ul>
+        <li><h3>The curious</h3><p>They want free advice, not a solution. You give them an hour and they give you "let me think about it".</p></li>
+        <li><h3>The unfunded</h3><p>They have the problem but not the budget for a ₹2L engagement. The call ends at your pricing slide.</p></li>
+        <li><h3>The messenger</h3><p>They liked your pitch and now need to "check with the founder". You start over with someone who never heard it.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="light" id="booked">
+    <div class="wrap">
+      <h2 class="h2" style="max-width:22ch">We only count a call as booked when all three are true.</h2>
+      <div class="booked">
+        <div><span class="n">1</span><h3>Scheduled</h3><p>A specific date and time is agreed with the prospect, not "sometime next week".</p></div>
+        <div><span class="n">2</span><h3>Confirmed</h3><p>The prospect has explicitly said yes to the call and knows what it's for.</p></div>
+        <div><span class="n">3</span><h3>On your calendar</h3><p>The invite is sitting in your calendar, accepted, with the context you need.</p></div>
+      </div>
+      <p class="note">The purpose of every call is simple: you evaluate fit, and you close if it's aligned.</p>
+    </div>
+  </section>
+
+  <section id="qualify">
+    <div class="wrap">
+      <div class="split">
+        <h2 class="h2">Four things every prospect must have.</h2>
+        <div class="criteria">
+          <div><h3>A real problem</h3><p>Something is holding growth back and they can say what it is.</p></div>
+          <div><h3>Budget</h3><p>They have invested in coaching, consulting or tools before, and would again.</p></div>
+          <div><h3>Authority</h3><p>They make the buying decision. No messengers, no committees of one.</p></div>
+          <div><h3>Explicit agreement</h3><p>They asked for the call. Nobody is surprised when your invite arrives.</p></div>
+        </div>
+      </div>
+
+      <div class="script">
+        <div>
+          <h3 class="h2" style="font-size:var(--s3)">The questions we ask before booking</h3>
+          <p class="muted" style="margin-top:.8rem">We talk to business owners moving from stability to growth, aiming for ₹10 to 50L a year. Anyone who doesn't pass a question doesn't move forward.</p>
+        </div>
+        <div>
+          <div class="q">
+            <blockquote>"Are you trying to scale the business right now, or mostly keeping things stable?"</blockquote>
+            <p class="why"><b>Continues if</b> they're trying to scale, growth has slowed, or they're stuck at the same level.</p>
+          </div>
+          <div class="q">
+            <blockquote>"What's the main thing holding growth back: leads, systems, or clarity?"</blockquote>
+            <p class="why"><b>Tells us</b> whether the problem is one you actually solve.</p>
+          </div>
+          <div class="q">
+            <blockquote>"Have you invested in coaching, consulting or tools to grow before?"</blockquote>
+            <p class="why"><b>Continues if</b> they saw value and are open to investing again. <b>Stops if</b> they've never invested and won't, or call every past investment a waste.</p>
+          </div>
+          <div class="q">
+            <blockquote>"This sounds worth a proper conversation. Want me to set up a call with a provider I work with?"</blockquote>
+            <p class="why"><b>If yes,</b> the call goes on your calendar. That's the only way a call gets booked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="fit">
+    <div class="wrap">
+      <h2 class="h2" style="max-width:20ch">Built for firms that already sell on calls.</h2>
+      <div class="fit">
+        <div>
+          <h3>A good fit</h3>
+          <ul>
+            <li>Agencies, consultants and select coaches selling to businesses</li>
+            <li>Engagements of ₹1L or more, ideally ₹2 to 5L</li>
+            <li>You already close deals on sales calls and understand your pipeline</li>
+            <li>Unqualified leads are costing you hours every week</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>Not a fit</h3>
+          <ul>
+            <li>Low-ticket offers where volume matters more than quality</li>
+            <li>No sales process yet, or no one to take the calls</li>
+            <li>You want a guaranteed revenue number</li>
+            <li>You want to be cold-called on by us, at scale, forever</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="wrap">
+      <p class="big">We don't promise revenue. <span>We promise serious conversations.</span></p>
+      <div class="pillars">
+        <div><h3>One thing only</h3><p>Qualified call booking. No ads, no funnels, no content retainers bolted on.</p></div>
+        <div><h3>Very few clients</h3><p>We cap the number of firms we work with so screening quality never drops.</p></div>
+        <div><h3>Month-to-month</h3><p>If the calls aren't qualified, we stop. No lock-in, no notice period.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="book">
+    <div class="wrap">
+      <div>
+        <h2>Are you happy with the quality of your sales calls?</h2>
+        <p>If the answer is no, let's talk for 20 minutes. We'll look at who you sell to, what an ideal call looks like, and whether we're the right fit.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-brass" data-book href="#book">Book an intro call</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/deepansh-deep-69a4a8268/" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vertex Revenue. Founded by <a href="https://www.linkedin.com/in/deepansh-deep-69a4a8268/" target="_blank" rel="noopener">Deepansh Deep</a>.</span>
+    <span>Pre-qualified sales calls for high-ticket B2B service providers.</span>
+  </div>
+</footer>
+
+<script>
+/* ---- Booking link: paste your Cal.com / Calendly link here once it exists ---- */
+const BOOKING_URL = "https://www.linkedin.com/in/deepansh-deep-69a4a8268/";
+document.querySelectorAll("[data-book]").forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
+
+/* ---- Screening illustration ---- */
+const CHECKS = ["Real problem", "Budget", "Decision-maker", "Agreed to call"];
+const LEADS = [
+  { who: "Owner, interior design studio", meta: "Pune. Stuck at the same level for a year", fail: -1, slot: [1, 1], label: "Interior studio" },
+  { who: "Student founder", meta: "Wants free advice on starting up", fail: 1 },
+  { who: "Marketing executive, logistics firm", meta: "Interested, needs to ask the MD", fail: 2 },
+  { who: "Director, CA practice", meta: "Kolkata. Growth slowed after 3 partners", fail: -1, slot: [2, 3], label: "CA practice" },
+  { who: "Gym owner", meta: "Just browsing, no call wanted", fail: 3 },
+  { who: "Founder, D2C skincare brand", meta: "Says every past investment was a waste", fail: 1 },
+  { who: "Founder, edtech company", meta: "Aiming for ₹40L this year", fail: -1, slot: [4, 2], label: "Edtech founder" },
+  { who: "Freelance designer", meta: "Happy where things are", fail: 0 },
+];
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"], TIMES = ["11:00", "14:00", "16:30", "18:00"];
+const BUSY = new Set(["0-0", "2-1", "3-3", "0-2", "4-0"]);
+const week = document.getElementById("week"), lane = document.getElementById("lane");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const slots = {};
+
+week.appendChild(document.createElement("span"));
+DAYS.forEach(d => { const s = document.createElement("span"); s.className = "d"; s.textContent = d; week.appendChild(s); });
+TIMES.forEach((t, r) => {
+  const tl = document.createElement("span"); tl.className = "t"; tl.textContent = t; week.appendChild(tl);
+  DAYS.forEach((_, c) => {
+    const s = document.createElement("div"); s.className = "slot" + (BUSY.has(c + "-" + r) ? " busy" : "");
+    slots[c + "-" + r] = s; week.appendChild(s);
+  });
+});
+
+const $ = id => document.getElementById(id);
+let screened = 0, rejected = 0, booked = 0;
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+function card(lead) {
+  const el = document.createElement("div"); el.className = "lead up";
+  el.innerHTML = `<div class="who">${lead.who}<span>${lead.meta}</span></div><div class="checks">${CHECKS.map(c => `<span class="chk"><i></i>${c}</span>`).join("")}</div>`;
+  return el;
+}
+function bookSlot(lead) {
+  const [c, r] = lead.slot, s = slots[c + "-" + r];
+  const bk = document.createElement("div"); bk.className = "bk"; bk.textContent = lead.label;
+  s.appendChild(bk); requestAnimationFrame(() => requestAnimationFrame(() => bk.classList.add("on")));
+}
+function staticState() {
+  LEADS.filter(l => l.fail === -1).forEach(bookSlot);
+  const l = LEADS[0], el = card(l); el.classList.remove("up");
+  el.querySelectorAll(".chk").forEach(c => c.classList.add("ok")); lane.appendChild(el);
+  $("screened").textContent = LEADS.length; $("rejected").textContent = LEADS.length - 3; $("bookedCount").textContent = 3;
+}
+async function run() {
+  while (true) {
+    for (const lead of LEADS) {
+      const el = card(lead); lane.appendChild(el);
+      await wait(60); el.classList.remove("up"); await wait(550);
+      const chks = el.querySelectorAll(".chk");
+      for (let i = 0; i < CHECKS.length; i++) {
+        await wait(380);
+        if (i === lead.fail) { chks[i].classList.add("no"); el.classList.add("rejected"); break; }
+        chks[i].classList.add("ok");
+      }
+      screened++; $("screened").textContent = screened;
+      await wait(700);
+      if (lead.fail === -1) { booked++; $("bookedCount").textContent = booked; bookSlot(lead); }
+      else { rejected++; $("rejected").textContent = rejected; }
+      el.classList.add("out"); await wait(480); el.remove();
+    }
+    await wait(2600);
+    Object.values(slots).forEach(s => s.querySelectorAll(".bk").forEach(b => b.remove()));
+    screened = rejected = booked = 0; ["screened", "rejected", "bookedCount"].forEach(i => $(i).textContent = 0);
+  }
+}
+reduced ? staticState() : run();
+</script>
+</body>
+</html>
