@@ -31,7 +31,7 @@ jobs:
           touch .nojekyll
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git add -A index.html assets favicon.svg .nojekyll
+          git add -A index.html privacy.html terms.html founder.webp assets favicon.svg .nojekyll
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Publish website build"
           git push

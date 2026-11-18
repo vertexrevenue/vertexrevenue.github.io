@@ -38,11 +38,11 @@ export function prospectFace() {
     g.fillStyle = bg; g.fill();
     g.lineWidth = 3; g.strokeStyle = "rgba(196,200,208,.35)"; g.stroke();
 
-    g.fillStyle = "#8d93a0"; g.font = `500 30px ${SANS}`;
-    g.fillText("Reply received", 70, 104);
-    g.fillStyle = "#f4f5f7"; g.font = `700 52px ${SANS}`;
-    g.fillText("COO, 40-person HVAC distributor", 70, 178);
-    g.fillStyle = "#b9bec8"; g.font = `400 34px ${SANS}`;
+    g.fillStyle = "#9aa0ad"; g.font = `500 34px ${SANS}`;
+    g.fillText("Reply received", 70, 100);
+    g.fillStyle = "#f4f5f7"; g.font = `700 58px ${SANS}`;
+    g.fillText("COO, 40-person HVAC distributor", 70, 176);
+    g.fillStyle = "#c4c8d0"; g.font = `400 38px ${SANS}`;
     g.fillText("“Our pipeline stalled after our sales lead left.”", 70, 240);
 
     g.strokeStyle = "rgba(196,200,208,.18)"; g.lineWidth = 2;
@@ -58,9 +58,9 @@ export function prospectFace() {
         g.strokeStyle = "#fff"; g.lineWidth = 5; g.lineCap = "round"; g.lineJoin = "round";
         g.beginPath(); g.moveTo(86, y - 12); g.lineTo(95, y - 2); g.lineTo(112, y - 24); g.stroke();
       }
-      g.fillStyle = on ? "#f4f5f7" : "#8d93a0"; g.font = `${on ? 600 : 400} 38px ${SANS}`;
+      g.fillStyle = on ? "#f4f5f7" : "#9aa0ad"; g.font = `${on ? 600 : 500} 44px ${SANS}`;
       g.fillText(label, 146, y);
-      if (on) { g.fillStyle = "#7f95ff"; g.font = `500 28px ${SANS}`; g.textAlign = "right"; g.fillText("Passed", W - 70, y); g.textAlign = "left"; }
+      if (on) { g.fillStyle = "#8fa2ff"; g.font = `600 34px ${SANS}`; g.textAlign = "right"; g.fillText("Passed", W - 70, y); g.textAlign = "left"; }
     });
     f.t.needsUpdate = true;
   };

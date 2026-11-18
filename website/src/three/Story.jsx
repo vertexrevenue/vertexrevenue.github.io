@@ -61,7 +61,8 @@ function Envelope({ mat, flapPivot, edgeMat }) {
 }
 
 export function StoryScene({ mobile }) {
-  const root = useRef(), env = useRef(), flap = useRef(), card = useRef();
+  const root = useRef(), obj = useRef(), env = useRef(), flap = useRef(), card = useRef();
+  const OBJ_SCALE = mobile ? 1.15 : 1.45;
   const scanner = useRef(), spark = useRef(), sparkHalo = useRef();
   const prospect = useMemo(prospectFace, []);
   const invite = useMemo(inviteFace, []);
@@ -73,8 +74,8 @@ export function StoryScene({ mobile }) {
     document.fonts.ready.then(() => { prospect.draw(ticksRef.current); });
   }, [prospect]);
 
-  const envMat = useMemo(() => new THREE.MeshPhysicalMaterial({ color: "#191b21", metalness: 0.55, roughness: 0.36, clearcoat: 0.7, clearcoatRoughness: 0.25, transparent: true }), []);
-  const edgeMat = useMemo(() => new THREE.LineBasicMaterial({ color: "#c4c8d0", transparent: true, opacity: 0.55 }), []);
+  const envMat = useMemo(() => new THREE.MeshPhysicalMaterial({ color: "#2b2f39", metalness: 0.6, roughness: 0.3, clearcoat: 0.9, clearcoatRoughness: 0.2, envMapIntensity: 1.6, transparent: true }), []);
+  const edgeMat = useMemo(() => new THREE.LineBasicMaterial({ color: new THREE.Color(1.6, 1.7, 2.1), toneMapped: false, transparent: true, opacity: 0.9 }), []);
   const frontMat = useMemo(() => new THREE.MeshBasicMaterial({ map: prospect.t, transparent: true, alphaTest: 0.02, side: THREE.FrontSide, toneMapped: false }), [prospect]);
   const backMat = useMemo(() => new THREE.MeshBasicMaterial({ map: invite.t, transparent: true, alphaTest: 0.02, side: THREE.FrontSide, toneMapped: false }), [invite]);
   const scanCore = useMemo(() => new THREE.MeshBasicMaterial({ color: new THREE.Color(1.2, 1.5, 6), toneMapped: false, transparent: true }), []);
@@ -112,6 +113,7 @@ export function StoryScene({ mobile }) {
   const lineRef = useRef();
 
   const tmpV = useMemo(() => new THREE.Vector3(), []);
+  const tmpW = useMemo(() => new THREE.Vector3(), []);
   const qA = useMemo(() => new THREE.Quaternion(), []);
   const qB = useMemo(() => new THREE.Quaternion(), []);
   const eul = useMemo(() => new THREE.Euler(), []);
@@ -129,7 +131,7 @@ export function StoryScene({ mobile }) {
     e.position.set(11 - eIn * 11, -eDrop * 5.2 + Math.sin(t * 0.9) * 0.04 * eIn, 0);
     e.rotation.set(eTurn * 0.32 + eDrop * 0.9, eTurn * 0.62 - (1 - eIn) * 0.18 + Math.sin(t * 0.5) * 0.03, eTurn * 0.05 - eDrop * 0.4);
     envMat.opacity = 1 - eDrop;
-    edgeMat.opacity = 0.55 * (1 - eDrop);
+    edgeMat.opacity = 0.9 * (1 - eDrop);
     e.visible = eDrop < 0.999;
 
     /* 2. flap opens */
@@ -140,7 +142,7 @@ export function StoryScene({ mobile }) {
     e.updateMatrixWorld();
     tmpV.set(0, rise * 2.05, 0);
     e.localToWorld(tmpV);
-    root.current.worldToLocal(tmpV);
+    obj.current.worldToLocal(tmpV);
     const attachedPos = tmpV.clone();
     qA.copy(e.quaternion);
 
@@ -183,7 +185,9 @@ export function StoryScene({ mobile }) {
       const startPt = GRAPH[0];
       let pos;
       if (p < T.graph[0]) {
-        pos = card.current.position.clone().lerp(startPt, ease(seg(p, [T.spark[0] + 0.03, T.graph[0] + 0.005])));
+        card.current.getWorldPosition(tmpW);
+        root.current.worldToLocal(tmpW);
+        pos = tmpW.clone().lerp(startPt, ease(seg(p, [T.spark[0] + 0.03, T.graph[0] + 0.005])));
       } else {
         pos = curve.getPointAt(Math.max(0.0001, Math.min(reveal, 1)));
       }
@@ -210,6 +214,7 @@ export function StoryScene({ mobile }) {
 
   return (
     <group ref={root}>
+      <group ref={obj} scale={OBJ_SCALE}>
       <group ref={env}>
         <Envelope mat={envMat} flapPivot={flap} edgeMat={edgeMat} />
       </group>
@@ -226,6 +231,7 @@ export function StoryScene({ mobile }) {
       <group ref={scanner} visible={false}>
         <mesh material={scanCore}><planeGeometry args={[0.035, 3.4]} /></mesh>
         <mesh material={scanSoft}><planeGeometry args={[0.9, 3.4]} /></mesh>
+      </group>
       </group>
 
       <lineSegments geometry={gridGeo} material={gridMat} />

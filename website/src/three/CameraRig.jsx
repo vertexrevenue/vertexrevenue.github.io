@@ -19,9 +19,13 @@ const K = [
   { p: 1.0, pos: V(0, 0.6, 14.2), look: V(0, 0.2, -1.2) },
 ];
 
-function sample(p) {
+/* the story object is drawn larger on desktop; pull the camera back by the
+   same amount for the object poses so it stays in frame */
+const scaled = (k, f) => (k.p > 0.9 ? k : { p: k.p, pos: k.pos.clone().multiplyScalar(f), look: k.look.clone().multiplyScalar(f) });
+
+function sample(p, f = 1) {
   for (let i = 0; i < K.length - 1; i++) {
-    const a = K[i], b = K[i + 1];
+    const a = scaled(K[i], f), b = scaled(K[i + 1], f);
     if (p <= b.p) {
       const t = ease(seg(p, [a.p, b.p]));
       return { pos: a.pos.clone().lerp(b.pos, t), look: a.look.clone().lerp(b.look, t) };
@@ -39,7 +43,7 @@ export function CameraRig({ worldRef }) {
 
   useFrame(({ clock }, dt) => {
     const p = S.storyP;
-    const T = sample(p);
+    const T = sample(p, mobile ? 1 : 1.36);
     // after the story, a slow drift so the page never feels frozen
     const sec = S.sec.how;
     const after = sec ? clamp((S.y - (sec.top + sec.h - S.vh)) / (S.vh * 3)) : 0;

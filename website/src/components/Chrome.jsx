@@ -74,10 +74,10 @@ export function Nav() {
         <Wordmark />
       </a>
       <ul className="links">
-        <li><a href="#how" onClick={go("how")}>How we qualify</a></li>
-        <li><a href="#strip" onClick={go("strip")}>The questions</a></li>
-        <li><a href="#fit" onClick={go("fit")}>Who it's for</a></li>
-        <li><a href="#terms" onClick={go("terms")}>Terms</a></li>
+        <li><a href="#process" onClick={go("process")}>How it works</a></li>
+        <li><a href="#brief" onClick={go("brief")}>Sample brief</a></li>
+        <li><a href="#pricing" onClick={go("pricing")}>Pricing</a></li>
+        <li><a href="#faq" onClick={go("faq")}>FAQ</a></li>
       </ul>
       <a className="pill" href={BOOKING_URL} target="_blank" rel="noopener">Book a call</a>
     </nav>

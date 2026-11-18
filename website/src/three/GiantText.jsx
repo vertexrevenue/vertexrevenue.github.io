@@ -27,7 +27,7 @@ function makeTexture(word) {
   return { t, aspect: c.width / c.height };
 }
 
-export function GiantText({ word = "REVENUE", z = -8, height = 6.4, opacity = 0.07 }) {
+export function GiantText({ word = "REVENUE", z = -8, height = 6.4, opacity = 0.032 }) {
   const [tex, setTex] = useState(null);
   const ref = useRef();
   useEffect(() => {

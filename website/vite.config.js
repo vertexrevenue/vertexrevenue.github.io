@@ -7,6 +7,7 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1800,
     rollupOptions: {
+      input: { main: 'index.html', privacy: 'privacy.html', terms: 'terms.html' },
       output: {
         manualChunks: {
           three: ["three"],

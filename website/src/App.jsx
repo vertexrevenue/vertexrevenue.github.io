@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { initScroll, hasWebGL, S, measure, onScroll } from "./lib/scroll";
 import { Nav, Loader } from "./components/Chrome";
-import { Hero, Story, Strip, Counts, Fit, Terms, CTA, Footer } from "./components/Sections";
+import { Hero, Story, Timeline, Brief, Strip, Counts, Fit, Pricing, Founder, FAQ, CTA, Footer } from "./components/Sections";
 
 const World = lazy(() => import("./three/World"));
 
@@ -42,10 +42,14 @@ export default function App() {
         <Hero ready={ready} gl={gl} />
         <Story />
         <div className="content" id="content">
+          <Timeline />
+          <Brief />
           <Strip />
           <Counts />
           <Fit />
-          <Terms />
+          <Pricing />
+          <Founder />
+          <FAQ />
         </div>
         <CTA />
       </main>
