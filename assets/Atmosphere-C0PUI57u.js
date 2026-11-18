@@ -1,0 +1,10 @@
+import{r as l,u,j as d}from"./r3f-CPr_AZ12.js";import{ae as p,Q as m,l as f,a9 as g,e as h,ac as v,ah as x}from"./three-D0ykMc-I.js";function S(e=7){let t=e>>>0;return()=>(t=Math.imul(t^t>>>15,2246822507)+1831565813>>>0,t=Math.imul(t^t>>>13,3266489909)>>>0,((t^t>>>16)>>>0)/4294967295)}function w(){const e=l.useRef(),t=l.useMemo(()=>new f({side:g,depthWrite:!1,fog:!1,vertexShader:"varying vec3 vDir; void main(){ vDir = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",fragmentShader:`varying vec3 vDir;
+      void main(){
+        float h = vDir.y;
+        vec3 low = vec3(0.018,0.019,0.024);
+        vec3 mid = vec3(0.040,0.043,0.052);
+        vec3 high = vec3(0.045,0.060,0.150);
+        vec3 c = mix(low, mid, smoothstep(-0.6, 0.1, h));
+        c = mix(c, high, smoothstep(0.1, 1.0, h) * 0.55);
+        gl_FragColor = vec4(c, 1.0);
+      }`}),[]);return u(({camera:r})=>e.current&&e.current.position.copy(r.position)),d.jsx("mesh",{ref:e,material:t,renderOrder:-10,frustumCulled:!1,children:d.jsx("sphereGeometry",{args:[150,48,32]})})}function C({count:e=700}){const t=l.useRef(),{geo:r,speeds:c}=l.useMemo(()=>{const n=S(11),s=new Float32Array(e*3),a=new Float32Array(e);for(let i=0;i<e;i++)s[i*3]=(n()-.5)*50,s[i*3+1]=(n()-.5)*30,s[i*3+2]=-25+n()*30,a[i]=.03+n()*.1;const o=new h;return o.setAttribute("position",new v(s,3)),{geo:o,speeds:a}},[e]);return u((n,s)=>{const a=r.attributes.position.array;for(let o=0;o<e;o++)a[o*3+1]+=c[o]*s,a[o*3+1]>15&&(a[o*3+1]=-15);r.attributes.position.needsUpdate=!0}),d.jsx("points",{ref:t,geometry:r,frustumCulled:!1,children:d.jsx("pointsMaterial",{size:.035,color:"#b8c0d6",transparent:!0,opacity:.45,depthWrite:!1,blending:x,sizeAttenuation:!0})})}function M(){const e=document.createElement("canvas");e.width=e.height=128;const t=e.getContext("2d"),r=t.createRadialGradient(64,64,0,64,64,64);r.addColorStop(0,"rgba(255,255,255,1)"),r.addColorStop(.14,"rgba(200,212,255,.95)"),r.addColorStop(.4,"rgba(70,95,255,.42)"),r.addColorStop(1,"rgba(47,75,255,0)"),t.fillStyle=r,t.fillRect(0,0,128,128);const c=new p(e);return c.colorSpace=m,c}export{C as D,w as S,M as g};
