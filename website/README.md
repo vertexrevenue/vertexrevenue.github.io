@@ -1,23 +1,42 @@
 # Vertex Revenue website
 
-Vite + React + Three.js (React Three Fiber) site for https://vertexrevenue.github.io
+Vite + React + Three.js (React Three Fiber). Live at https://vertexrevenue.github.io
 
-## Run it locally
+## Where to change things
+
+| To change | Edit |
+|---|---|
+| Booking link, LinkedIn link, email | `src/config.js` |
+| Any page text, price, FAQ, process steps | `src/components/Sections.jsx` |
+| Nav links, loader, animated wordmark | `src/components/Chrome.jsx` |
+| Colours, spacing, fonts, layout | `src/styles.css` |
+| Privacy and terms text | `privacy.html`, `terms.html` |
+| Founder photo | `public/founder.webp` |
+
+Inside `Sections.jsx`: `STEPS` (scroll story), `DAYS` (first 30 days), `QUESTIONS` (the five qualification questions), `FAQS`. Pricing is in `Pricing()`, fit rules in `Fit()`, the replacement policy in `Counts()`.
+
+## The 3D world (`src/three/`)
+
+- `LogoStage.jsx`, `LogoVR.jsx`: the draggable chrome VR monogram in the hero.
+- `Story.jsx`, `textures.js`: the envelope, prospect card and revenue line that morph as you scroll.
+- `CameraRig.jsx`: camera path for the scroll story.
+- `layout.js`: the story timeline (when each stage starts and ends) and colours.
+- `GiantText.jsx`: the large sliding "REVENUE" letters.
+- `Atmosphere.jsx`, `World.jsx`: background, dust, lighting, post effects.
+- `src/lib/scroll.js`: shared scroll state used by both the page and the 3D scene.
+
+If WebGL is missing or reduced motion is on, the page shows a still layout instead.
+
+## Run it on your computer
+
 ```
 cd website
 npm install
 npm run dev
 ```
+
 Open the address it prints (usually http://localhost:5173).
 
-## Change the booking link
-Edit `BOOKING_URL` in `src/config.js`. Every "Book" button uses it.
-
-## How it is built
-- `src/three/` is the 3D world: chrome VR logo (LogoVR), stone slab and rocks (Stone), light beam, dust and halo rings (Atmosphere), the qualification funnel (Funnel), the giant sliding letters (GiantText) and the scroll-driven camera (CameraRig).
-- `src/components/` is the page: nav, cursor, loader and all sections.
-- `src/lib/scroll.js` is the shared scroll state (Lenis smooth scroll). The camera and the text both read from it.
-- No WebGL or "reduce motion" turned on: the page falls back to a still layout.
-
 ## Deploy
-Push to `main`. The workflow in `.github/workflows/deploy.yml` builds this folder and commits the result (index.html, assets/) to the repo root, which GitHub Pages already serves. No settings change needed. The site updates about 2 minutes after the push.
+
+Push to `main`. The workflow builds this folder and publishes the output to the repo root, which GitHub Pages serves. No settings to change.
