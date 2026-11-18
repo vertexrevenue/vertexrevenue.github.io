@@ -1,0 +1,7 @@
+# private working files, keep out of the public repo
+VERTEX_CONTEXT.md
+sender.gs
+_to_delete/
+# build output and dependencies
+website/node_modules/
+website/dist/
