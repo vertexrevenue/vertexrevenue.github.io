@@ -40,7 +40,6 @@ export function Hero({ ready, gl }) {
         ) : (
           <Mark size={260} className="hero-mark" />
         )}
-        <p className="hint">Drag to turn it</p>
       </div>
       <p className="define fade"><b>Vertex</b>, noun. The point where everything narrows to one.</p>
     </header>
